@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A47317247DA72F00A77CF1 /* LyricsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A47316247DA72F00A77CF1 /* LyricsTableViewCell.swift */; };
+		04A47319247DA97B00A77CF1 /* LyricsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A47318247DA97B00A77CF1 /* LyricsResultViewController.swift */; };
 		04DA0154247C336000C9BA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA0153247C336000C9BA43 /* AppDelegate.swift */; };
 		04DA0156247C336000C9BA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA0155247C336000C9BA43 /* SceneDelegate.swift */; };
 		04DA0158247C336000C9BA43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA0157247C336000C9BA43 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A47316247DA72F00A77CF1 /* LyricsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsTableViewCell.swift; sourceTree = "<group>"; };
+		04A47318247DA97B00A77CF1 /* LyricsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsResultViewController.swift; sourceTree = "<group>"; };
 		04DA0150247C336000C9BA43 /* LyricsFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyricsFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DA0153247C336000C9BA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DA0155247C336000C9BA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,9 +107,11 @@
 				04DA0155247C336000C9BA43 /* SceneDelegate.swift */,
 				04DA0157247C336000C9BA43 /* ViewController.swift */,
 				04DA0159247C336000C9BA43 /* Main.storyboard */,
+				04A47318247DA97B00A77CF1 /* LyricsResultViewController.swift */,
 				04DA015C247C336100C9BA43 /* Assets.xcassets */,
 				04DA015E247C336100C9BA43 /* LaunchScreen.storyboard */,
 				04DA0161247C336100C9BA43 /* Info.plist */,
+				04A47316247DA72F00A77CF1 /* LyricsTableViewCell.swift */,
 			);
 			path = LyricsFinder;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DA0158247C336000C9BA43 /* ViewController.swift in Sources */,
+				04A47319247DA97B00A77CF1 /* LyricsResultViewController.swift in Sources */,
+				04A47317247DA72F00A77CF1 /* LyricsTableViewCell.swift in Sources */,
 				04DA0154247C336000C9BA43 /* AppDelegate.swift in Sources */,
 				04DA0156247C336000C9BA43 /* SceneDelegate.swift in Sources */,
 			);
