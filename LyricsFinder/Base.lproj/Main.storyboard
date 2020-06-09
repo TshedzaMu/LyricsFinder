@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="rDH-Rj-98c" kind="show" id="dRn-OY-CUq"/>
+                                    <action selector="searchLyricsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uub-N7-cbw"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Sm6-zJ-h1X">
@@ -89,6 +89,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lyrics Finder" id="aH3-6Y-Chg"/>
+                    <connections>
+                        <outlet property="artistNameTextField" destination="NeV-NI-D7O" id="A8I-4e-u5d"/>
+                        <outlet property="songNameTextField" destination="tl3-dv-oOf" id="Qsv-1j-h2U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,13 +101,13 @@
         <!--Lyrics Result View Controller-->
         <scene sceneID="ZN8-Nq-dpi">
             <objects>
-                <viewController id="rDH-Rj-98c" customClass="LyricsResultViewController" customModule="LyricsFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VID_LYRICS_RESULT" id="rDH-Rj-98c" customClass="LyricsResultViewController" customModule="LyricsFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apA-2e-bTx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-nI-yas">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CID_LyricsCell" rowHeight="582" id="R9e-Wp-ckU" customClass="LyricsTableViewCell" customModule="LyricsFinder" customModuleProvider="target">
@@ -174,6 +178,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUH-Bg-TyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1795.6521739130437" y="111.83035714285714"/>
+        </scene>
+        <!--Lyrics View Controller-->
+        <scene sceneID="nvy-Z4-eyE">
+            <objects>
+                <viewController storyboardIdentifier="VID_LYRICS_RESULT2" id="CAZ-dy-sZC" customClass="LyricsViewController" customModule="LyricsFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ff8-YT-tgo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-pP-esv">
+                                <rect key="frame" x="10" y="54" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjY-xG-HVD">
+                                <rect key="frame" x="10" y="95" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyrics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqf-6J-moB">
+                                <rect key="frame" x="10" y="136" width="394" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qqf-6J-moB" firstAttribute="trailing" secondItem="goZ-pP-esv" secondAttribute="trailing" id="28P-OL-ll6"/>
+                            <constraint firstItem="goZ-pP-esv" firstAttribute="top" secondItem="PHb-p3-jgp" secondAttribute="top" constant="10" id="5os-sf-OkE"/>
+                            <constraint firstItem="KjY-xG-HVD" firstAttribute="top" secondItem="goZ-pP-esv" secondAttribute="bottom" constant="20" id="75M-SW-dej"/>
+                            <constraint firstItem="PHb-p3-jgp" firstAttribute="trailing" secondItem="goZ-pP-esv" secondAttribute="trailing" constant="10" id="7tU-5C-J6m"/>
+                            <constraint firstItem="KjY-xG-HVD" firstAttribute="trailing" secondItem="goZ-pP-esv" secondAttribute="trailing" id="9NT-75-iPA"/>
+                            <constraint firstItem="goZ-pP-esv" firstAttribute="leading" secondItem="PHb-p3-jgp" secondAttribute="leading" constant="10" id="Pzr-cS-ktk"/>
+                            <constraint firstItem="qqf-6J-moB" firstAttribute="leading" secondItem="goZ-pP-esv" secondAttribute="leading" id="RL8-eJ-cBY"/>
+                            <constraint firstItem="qqf-6J-moB" firstAttribute="top" secondItem="KjY-xG-HVD" secondAttribute="bottom" constant="20" id="Rb4-EZ-a26"/>
+                            <constraint firstItem="KjY-xG-HVD" firstAttribute="leading" secondItem="goZ-pP-esv" secondAttribute="leading" id="xoh-zZ-zfr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PHb-p3-jgp"/>
+                    </view>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="goZ-pP-esv" id="YSQ-ug-c04"/>
+                        <outlet property="lyricsLabel" destination="qqf-6J-moB" id="MAd-Ba-8cL"/>
+                        <outlet property="songNameLabel" destination="KjY-xG-HVD" id="Gix-0k-MK4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb4-ye-isY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2531.8840579710145" y="123.88392857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vUo-qX-u0X">
